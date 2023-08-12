@@ -23,6 +23,7 @@ h1 {
     font-size: 80px;
     font-weight: 400;
     letter-spacing: -1.5px;
+    margin-top: 0;
 }
 
 h2 {
@@ -91,19 +92,49 @@ code {
     margin-left: 20px;
 }
 footer {
-    background-color: blueviolet;
-    height: 100px;
+    background-color: #863ae8;
 }
 
-.footnote {
-    display: inline-block;
-    margin: 25 auto;
+footer ul {
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
 }
-.footnote li {
+
+footer ul li {
     display: inline-block;
     margin: 10px;
 }
 
-.footnote a {
+footer li a {
     text-decoration: none;
+    color: white;
+} 
+
+footer li a:hover {
+    text-decoration: 1px solid underline;
+} 
+
+.hero {
+    background-color: #863ae8;
+    height: 100vh;
+    color: white;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1, .hero p {
+    width: 75%;
+    max-width: 900px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.hero hr{
+    width: 50%;
+    background-color: gray;
 }
