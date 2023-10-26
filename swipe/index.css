@@ -559,8 +559,8 @@ main {
     display: flex;
     margin: calc(var(--spacing-xl)*2) 0 0 0;
     position: absolute;
-    max-width: var(--standard-width);
     height: 800px;
+    max-width: var(--standard-width);
     top: calc(var(--spacing-xl)*9);
 }
 
@@ -784,4 +784,170 @@ main {
 .footer h3 {
     font-size: var(--h6-size);
     font-weight: 700;
+}
+
+@media only screen and (max-width: 1154px) {
+     .section-container{
+        padding: 0 var(--spacing-md);
+     }
+}
+
+
+@media only screen and (max-width: 968px) {
+
+    :root{
+        --h1-size: 64px;
+        --h1-height: 72px;
+        --h3-size: 34px;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .unified-platform-section h2 { 
+        width: 100%;
+    }
+
+
+    .two-column .col-left{
+        width: 60%;
+    }
+
+    .two-column .col-right {
+        width: 40%;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .integrations-section .card-container {
+     flex-direction: column;
+  }
+  .integrations-section .card-container .card {
+    width: 100%;
+  }
+
+/* Why section */
+
+    .why-swipe-section .card-container {
+        flex-wrap: wrap;
+    }
+
+    .why-swipe-section .card {
+        width: 50%;
+        margin: var(--spacing-md) 0;
+        padding: 0;
+    }
+
+    /* Global section */
+
+    .global-section  .two-column {
+        height: 200px;
+
+    }
+    .global-section .col-left {
+         position: absolute;
+         top: 10%;
+    }
+
+    #globe {
+        height: 400px;
+        opacity: 10%;
+    }
+
+    .global-section .card-container {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height: auto;
+        position: absolute;
+        padding: 0 var(--spacing-xl);
+        top: 40%;
+
+    }
+
+ 
+    .global-section .card-container .card {
+        width: 50%;
+        height: fit-content;
+        margin: 0;
+        margin: var(--spacing-md) 0;
+    }
+
+}
+
+@media only screen and (max-width: 550px){
+
+    .unified-platform-section h2 { 
+        width: 100%;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+
+    .two-column .col-left{
+        width: 100%;
+    }
+
+    .two-column .col-right {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .integrations-section .col-right{
+        display: none;
+    }
+
+    .why-swipe-section .card {
+        width: 100%;
+    
+    }
+
+    .why-swipe-section .card .icon {
+        height: 35px;
+    }
+
+    .global-section  .two-column {
+        height: 200px;
+    }
+    .global-section .col-left {
+         position: absolute;
+         top: 10%;
+    }
+
+    #globe {
+        height: 400px;
+        opacity: 10%;
+    }
+
+    .global-section .card-container {
+        margin-top: var(--spacing-xl)*2;
+        justify-content: flex-start;
+        height: auto;
+        position: absolute;
+        padding: 0 var(--spacing-md);
+        top: 50%;
+
+    }
+
+    .global-section .card-container p {
+       font-size: var(--secondary-text-size);
+    }
+    .global-section .card-container .card {
+        width: 100%;
+        height: fit-content;
+        margin: 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+}
+
+html, body {
+        width: 100%;
+        position: relative;
+        overflow-x: hidden;
 }
