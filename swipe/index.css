@@ -212,6 +212,10 @@ p {
     margin-bottom: calc(var(--spacing-xl)*2);
 }
 
+.hamburger-button {
+    display: none;
+}
+
 main {
     width: 100%;
     margin: var(--spacing-xl) 0 0 0;
@@ -818,10 +822,43 @@ main {
         width: 40%;
     }
 
+    .global-section .card-container {
+
+        padding: 0 var(--spacing-xl);
+
+
+    }
 
 }
 
 @media only screen and (max-width: 768px) {
+
+    .hamburger-button {
+        width: 50px;
+        height: 30px;
+        background-color: rgba(250,250,250, 0.2);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+    .hamburger-button  .bar {
+        width: 16px;
+        height: 2px;
+        background-color: var(--bg-white);
+        margin-bottom: 2px;
+        border-radius: 5px;
+    }
+    .navbar .menu,.navbar button  {
+        display: none;
+    }
+
+    .hero-phone img {
+        height: 500px;
+     }
 
     .integrations-section .card-container {
      flex-direction: column;
@@ -868,6 +905,7 @@ main {
 
     }
 
+
  
     .global-section .card-container .card {
         width: 50%;
@@ -876,9 +914,58 @@ main {
         margin: var(--spacing-md) 0;
     }
 
+    /* Getting started */
+
+    .getting-started-section .two-column {
+        flex-direction: column;
+    }
+
+    .getting-started-section  .two-column .col-left{
+        width: 100%;
+    }
+    .getting-started-section .col-right  {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .getting-started-section .col-right .card {
+        width: 100%;
+        margin: var(--spacing-md) 0;
+    }
+
+
 }
 
 @media only screen and (max-width: 550px){
+
+    :root{
+        --h1-size: 55px;
+        --h1-height: 60px;
+        --h3-size: 34px;
+    }
+
+    #gradient-canvas {
+        height: 640px;
+    }
+
+    .partners-section .partners-grid {
+        padding: 0 var(--spacing-md);
+    }
+
+    .partners-grid img {
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .hero .two-column .col-right {
+        display: none;
+    }
+
 
     .unified-platform-section h2 { 
         width: 100%;
@@ -898,8 +985,22 @@ main {
         padding-left: 0;
     }
 
+    .integrations-section {
+        padding: 0;
+    }
+
     .integrations-section .col-right{
         display: none;
+    }
+
+    .integrations-section::before {
+         height: 900px;
+    }
+
+
+    .why-swipe-section {
+
+        padding: var(--spacing-xl) 0 0 0;
     }
 
     .why-swipe-section .card {
@@ -911,12 +1012,16 @@ main {
         height: 35px;
     }
 
+
+    .global-section {
+        padding: 0 0 calc(var(--spacing-xl)*3) 0;
+    }
     .global-section  .two-column {
         height: 200px;
     }
     .global-section .col-left {
          position: absolute;
-         top: 10%;
+         top: 0;
     }
 
     #globe {
@@ -930,8 +1035,6 @@ main {
         height: auto;
         position: absolute;
         padding: 0 var(--spacing-md);
-        top: 50%;
-
     }
 
     .global-section .card-container p {
@@ -943,6 +1046,62 @@ main {
         margin: 0;
         margin-bottom: var(--spacing-md);
     }
+
+    /* Virtual events section */
+
+    .virtual-events-section {
+        padding-bottom: var(--spacing-xl); 
+   
+    }
+
+    .virtual-events-section .swipe-sessions-card {
+        width: 100%;
+    }
+    .virtual-events-section .card-bottom .secondary-text {
+        width: 100%;
+    }
+    #sessions-logo {
+        width: 300px;
+    }
+
+    .virtual-events-section .swipe-sessions-card {
+        height: 360px;
+        margin-top: var(--spacing-xl);
+    }
+
+    .virtual-events-section .swipe-sessions-card .card-top {
+        height: 30%;
+    }
+
+
+    .virtual-events-section .swipe-sessions-card .card-bottom {
+        height: 30%;
+    }
+
+    .getting-started-section {
+  
+        padding: 0;
+    }
+
+    .getting-started-section .col-left {
+        padding-right: 0;
+    }
+
+
+    /* footer */
+    .footer .section-container {
+       flex-wrap: wrap;
+    }
+
+    .footer .col {
+        box-sizing: border-box;
+        width: 50%;
+        padding-left: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+
+
 
 }
 
