@@ -1,0 +1,60 @@
+
+
+.canvas-container {
+    width: calc(5*100vw);
+    height: 100vh;
+    display: flex;
+}
+
+body {
+    margin: 0;
+}
+
+#project1-box, #project2-box, #project3-box, #project4-box, #project5-box {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+
+.footer {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.footer .progress-bar {
+    width: 50%;
+    height: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.footer .progress-bar .progress-block{
+    width: 20%;
+    height: 20px;
+    background-color: rgb(35, 135, 43);
+    border-radius: 20px;
+}
+.right-button svg {
+    width: 60px;
+    height: 60px;
+}
+
+.right-button svg:hover {
+    opacity: 0.4;
+}
+
+.left-button svg {
+    width: 60px;
+    height: 60px;
+}
+
+.left-button svg:hover {
+    opacity: 0.4;
+}
