@@ -3,13 +3,13 @@ Where I Hone my frontend skills
 
 ## Motivation
 
-A job is where we solve problems of the company. As months progress we think "I do the same the stuff every day, am I learning enough new things?" /n
+In our professional lives, our job entails solving the problems of the company. However, as time goes by, we may find ourselves pondering whether we are truly expanding our knowledge and skills. 
 
-Learning new things takes certain effort from our end but are we facing enough problems daily? /n
+Learning new things requires a conscious effort on our part, but are we encountering a sufficient number of challenges on a daily basis? 
 
-Its not easy to encounter things we don't know - problems. What are you doing intentionally to add problems into your life? /n
+The reality is that it's not always easy to stumble upon unfamiliar problems. So, it's worth considering what deliberate steps we are taking to introduce challenges into our lives. 
 
-This is my humble attempt to add manageable frontend problems to my life so that I understand things i work on better. 
+With this in mind, I've embarked on a humble journey to incorporate manageable frontend problems into my daily routine. This endeavor aims to enhance my understanding of the tasks I work on and foster continuous learning and growth.
 
 
 
