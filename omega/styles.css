@@ -32,7 +32,7 @@ body {
 .footer .progress-bar {
     width: 50%;
     height: 20px;
-    background-color: aliceblue;
+    background-color: #828CAE;
     border-radius: 20px;
 }
 
@@ -41,21 +41,16 @@ body {
     height: 20px;
     background-color: rgb(35, 135, 43);
     border-radius: 20px;
+    transition: 0.4s ease;
 }
-.right-button svg {
+.right-button svg, .left-button svg  {
     width: 60px;
     height: 60px;
+    cursor: pointer;
 }
 
-.right-button svg:hover {
+.right-button svg:active, .left-button svg:active {
     opacity: 0.4;
+    transform: scale(0.98);
 }
 
-.left-button svg {
-    width: 60px;
-    height: 60px;
-}
-
-.left-button svg:hover {
-    opacity: 0.4;
-}

@@ -16,7 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);;
+    color: white;
+    background-color: #2E3654;
 }
 
 h3 {
@@ -26,8 +27,8 @@ h3 {
 .spinner {
     height: 100px;
     width: 100px;
-    border: 6px solid rgb(255, 255, 255);
-    border-top-color: #07ac1d;
+    border: 10px solid #828CAE;
+    border-top-color: #4E46DC;
     border-radius: 50%;
     animation: spinner 1s ease-in-out infinite;
 }
