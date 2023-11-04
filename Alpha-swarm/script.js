@@ -5,6 +5,7 @@ let leftButton = document.querySelector(".left-button");
 let container = document.querySelector(".canvas-container");
 
 let initIndex = 0;
+let temp = 0;
 
 function updateProgress() {
   var elem = document.elementFromPoint(
@@ -15,6 +16,8 @@ function updateProgress() {
   var projectIndex = parseInt(
     elem.id.replace("project", "").replace("-box", "")
   );
+
+  temp = projectIndex;
 
   progressBlock.style.width = (projectIndex / projects.length) * 100 + "%";
 
@@ -35,15 +38,26 @@ var viewportWidthInPixels = window.innerWidth;
 container.style.width = projects.length * 100 + "vw";
 
 function toTheRight() {
-  initIndex++;
+  if (temp > initIndex) {
+    initIndex = temp;
+  } else {
+    initIndex++;
+  }
+
   if (initIndex > projects.length) {
     initIndex = projects.length;
   }
+
   window.scrollTo(initIndex * viewportWidthInPixels, 0);
 }
 
 function toTheLeft() {
+  if (initIndex === 0) {
+    initIndex = temp;
+  }
+
   initIndex--;
+
   if (initIndex < 0) {
     initIndex = 0;
   }
