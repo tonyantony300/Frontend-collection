@@ -1,9 +1,0 @@
-body {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 96px;
-}
