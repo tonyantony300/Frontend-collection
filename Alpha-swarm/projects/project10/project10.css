@@ -1,8 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Ubuntu', sans-serif;
     width: 100vw;
     height: 100vh;
     background-color: #B2C8BA;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+.bg {
+    width: calc(100vw + 100px);
+    height: calc(100vh + 100px);
+    background-image: url('../../assets/mommy.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    filter: blur(0px);
+    top: -50px;
+    left: -50px;
+}
+
+.loading-text {
+    position: absolute;
+    font-size: 96px;
+    color: #fafafa;
 }
