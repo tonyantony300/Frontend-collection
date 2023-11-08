@@ -41,10 +41,10 @@ function update() {
       var port = chrome.runtime.connect(extensionId);
       port.postMessage("Pinging from webApp");
 
-      // port.onMessage.addListener(function (msg) {
-      //   // See other examples for sample onMessage handlers.
-      //   console.log("web page received: ", msg);
-      // });
+      port.onMessage.addListener(function (msg) {
+        // See other examples for sample onMessage handlers.
+        console.log("Recieved on webPage ", msg);
+      });
     } else if (load > 99) {
       clearInterval(intervalId);
       load = 100;
