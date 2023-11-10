@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 * {
@@ -8,60 +8,55 @@
 
 
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
+    background-color: #686de0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     margin: 0;
+    padding: 30px;
 }
 
 .container {
-    display: flex;
-    width: 90vw;
-   
+    background-color: #fff;
+    border-radius: 5px;
+    width: 600px;
+    max-width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.card {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80vh;
-    border-radius: 50px;
-    color: #fff;
-    cursor: pointer;
-    flex: 0.5;
-    margin: 10px;
-    position: relative;
-    transition: flex 0.7s ease-in;
+.container h3 {
+    margin: 0;
+    opacity: 0.5;
+    letter-spacing: 2px;
 }
 
-.card h3 {
+.joke {
+    margin: 50px auto;
+    max-width: 500px;
     font-size: 24px;
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in 0.7s;
 }
 
-.card.active {
-    flex: 5;
+.btn {
+    background-color: #9f68e0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.card.active h3 {
-    opacity: 1;
+.btn:hover {
+    transform: scale(0.98);
+
 }
-
-@media (max-width: 550px) {
-    .container {
-        width: 100vw;
-    }
-
-    .card:nth-of-type(4), .card:nth-of-type(5) {
-        display: none;
-    }
+.btn:active {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
