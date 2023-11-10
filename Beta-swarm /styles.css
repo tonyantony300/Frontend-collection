@@ -1,0 +1,76 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+.canvas-container {
+    height: 100vh;
+    display: flex;
+}
+
+body {
+    margin: 0;
+}
+
+[id^="project"][id$="-box"] {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+
+.footer {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.footer .progress-bar {
+    width: 50%;
+    height: 20px;
+    background-color: #828CAE;
+    border-radius: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.footer .progress-bar .progress-block{
+    width: 20%;
+    height: 20px;
+    background-color: rgb(35, 135, 43);
+    border-radius: 20px;
+    transition: 0.4s ease;
+}
+
+.right-button , .left-button {
+    background-color: #4E46DC;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.right-button:disabled , .left-button:disabled  {
+    background-color:  #828CAE;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.right-button:active , .left-button:active {
+    transform: scale(0.98);
+}
+.right-button svg, .left-button svg  {
+    width: 60px;
+    height: 60px;
+}
+
+.right-button svg:active, .left-button svg:active {
+    transform: scale(0.98);
+}
+
