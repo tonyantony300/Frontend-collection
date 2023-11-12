@@ -8,78 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project6.css">
-    <title>Document</title>
+    <title>Animated Navigation</title>
 </head>
 <body>
-    <h1>Estimate your cost</h1>
-    <div class="container">
-      <div class="tabs">
-        <p>Free</p>
-        <p class="active">Team</p>
-        <p>Professional</p>
-        <p >Enterprise</p>
-      </div>
-      <div class="line"></div>
-      <div class="toggle-wrapper">
-        <img src="images/icon1.png"/>
-        <div class="toggle">
-          <span>Mobile</span>
-          <span>Web</span>
-        </div>
-        <img src="images/icon2.png"/>
-      </div>
-      <div class="sessions-card">
-        <p>Monthly sessions</p>
-        <p class="number">20,000</p>
-      </div>
-      <p class="description">A session is a continous activity by the user on your app or in the website.Choose how many sessions you wish to record and discard the extras</p>
-      <div class="slider">
-        <div class="bar">
-          <div class="progress"></div>
-          <div class="pointer"></div>
-        </div>
-        <div class="scale">
-          <ul>
-            <li>0</li>
-            <li>1K</li>
-            <li>10K</li>
-            <li>25K</li>
-            <li>50K</li>
-            <li>250K</li>
-            <li>1M</li>
-            <li>10M</li>
-            <li>250M</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="top-section">
-            <p>Monthly Billing</p>
-            <p class="price">$199</p>
-            <p>Monthly</p>
-          </div>
-          <hr>
-          <p>Starting from 1-month data retention</p>
-          <p>10 Team members</p>
-          <button>Try Free for 14 Days</button>
-        </div>
-        <div class="card">
-          <div class="top-section">
-            <div class="save-header">
-              <p>Save upto 16%</p>
-            </div>
-            <p>Annual Billing</p>
-            <p class="price">$2,499</p>
-            <p> $179 Monthly</p>
-          </div>
-          <hr>
-          <p>Starting from 1-month data retention</p>
-          <p>10 Team members</p>
-          <button>Try Free for 14 Days</button>
-        </div>
-      </div>
-    </div>
+   <nav class="active" id="nav">
+      <ul>
+        <li> <a href="#">Home</a></li>
+        <li> <a href="#">Work</a></li>
+        <li> <a href="#">About</a></li>
+        <li> <a href="#">Contact</a></li>
+      </ul>
+      <button class="icon" id="toggle">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+      </button>
+   </nav>
+   <script src="project6.js"></script>
 </body>
 </html>
