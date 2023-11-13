@@ -85,7 +85,7 @@ body {
 }
 
 #nav.active {
-  width: 320px;
+  width: 330px;
   display: flex;
   justify-content: start;
   align-items: center;

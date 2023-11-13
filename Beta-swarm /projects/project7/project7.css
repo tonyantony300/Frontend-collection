@@ -1,45 +1,43 @@
-body {
-    width: 100vw;
-    height: 100vh;
-    background-image: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 96px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
 }
 
-.container {
-    height: 700px;
-    width: 700px;
-    margin: 200px auto;
-    background-color: black;
-    box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
-    display: grid;
-    grid-template-areas: 
-    "c a b b "
-    "c a b b"
-    "d d b b";
-    gap: 5px;
-  }
-  
-  .box {
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .one {
-    grid-area: a;
-  }
-  
-  .two {
-    grid-area: b;
-  }
-  
-  .three {
-    grid-area: c;
-  }
-  
-  .four {
-    grid-area: d;
-  }
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #8e448d;
+  color: #fff ;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 50px;
+}
+
+.counter {
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px){
+    body {
+      flex-direction: column;
+    }
+}
