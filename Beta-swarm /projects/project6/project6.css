@@ -26,18 +26,23 @@ body {
   height: 50px;
   list-style: none;
   display: flex;
+  justify-content: start;
+  align-items: center;
   padding: 10px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: width 0.6s linear;
   overflow-x: hidden;
+  position: relative;
 }
 
 #nav ul {
-  display: none;
+  opacity: 0;
   margin: 0;
   padding: 0;
-  transition: width 0.6s linear;
+  display: flex;
+  position: absolute;
+  transition: width 0.6s linear, opacity 0.6s linear;
 }
 
 #nav ul li {
@@ -48,13 +53,11 @@ body {
   transition: transform 0.6s linear;
 }
 
-#nav.active {
-  width: 320px;
-}
 
 #nav.active ul {
-  display: flex;
+  opacity: 1;
   list-style: none;
+
 }
 
 #nav.active ul li {
@@ -62,7 +65,7 @@ body {
   transform: rotateY(360deg);
 }
 
-#nav.active ul li a {
+#nav ul li a {
   text-decoration: none;
   color: black;
   font-weight: 600;
@@ -76,7 +79,23 @@ body {
   width: 30px;
   height: 30px;
   border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#nav.active {
+  width: 320px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#nav.active button {
+  position: absolute;
+  right: 10px;
+}
+
 
 #nav button:focus {
   outline: none;
@@ -87,7 +106,6 @@ body {
   background-color: #5290f9;
   width: 80%;
   height: 2px;
-  left: 5px;
   transition: transform 0.6s linear;
 }
 
