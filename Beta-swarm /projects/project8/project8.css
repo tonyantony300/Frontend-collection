@@ -92,4 +92,7 @@ h3 {
     font-weight: bold;
     height: 0px;
     transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
