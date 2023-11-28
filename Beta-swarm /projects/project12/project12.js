@@ -1,17 +1,40 @@
-let boxes = document.querySelectorAll(".box");
-let triggerBottom = (window.innerHeight / 5) * 3;
+let left = document.getElementById("left");
+let right = document.getElementById("right");
+let body = document.body;
 
-update();
+let slides = document.querySelectorAll(".slide");
 
-function update() {
-  boxes.forEach((item) => {
-    let boxTop = item.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      item.classList.add("show");
-    } else {
-      item.classList.remove("show");
+let mainIndex = 0;
+
+left.addEventListener("click", () => {
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains("active")) {
+      slide.classList.remove("active");
+      if (index === 0) {
+        mainIndex = slides.length - 1;
+      } else {
+        mainIndex = index - 1;
+      }
     }
   });
-}
+  updateImage(mainIndex);
+});
 
-window.addEventListener("scroll", update);
+right.addEventListener("click", () => {
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains("active")) {
+      slide.classList.remove("active");
+      if (index === slides.length - 1) {
+        mainIndex = 0;
+      } else {
+        mainIndex = index + 1;
+      }
+    }
+  });
+  updateImage(mainIndex);
+});
+
+function updateImage(mainIndex) {
+  slides[mainIndex].classList.add("active");
+  body.style.backgroundImage = slides[mainIndex].style.backgroundImage;
+}
