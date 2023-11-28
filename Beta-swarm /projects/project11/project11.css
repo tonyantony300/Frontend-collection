@@ -2,62 +2,73 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+    background-color: #e9e9e9;
 }
 
-
-.search  {
-    width: 50px;
-    height: 50px;
-    margin-left: -100px;
-    position: relative;
-    transition: transform 0.7s ease;
+.main-grid {
+    width: calc(100vw/2);
+    height: calc(100vh/2);
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "a b c"
+      "a b c"
+      "a d d"
+      "a e e";
 }
 
+.main-grid  * {
+    border: 2px solid black;
+}
 
-.search .input{
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    font-size: 18px;
+.one {
+    background-color: aliceblue;
+    grid-area: a;
+    display: grid;
     border: 0;
-    padding-left: 20px;
-    transition: width 0.7s ease;
 }
 
-.search .btn {
-    position: absolute;
-    top:0;
-    left: 0;
-    font-size: 24px;
-    background-color: #fff;
-    border: 0;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.7s ease-out;
+.two {
+    background-color: aquamarine;
+    grid-area: b;
 }
 
-.search .input:active, .search .btn:active{
-    outline: none;
-}
-.search .input:focus {
-    outline: none;
+.three {
+    background-color: bisque;
+    grid-area: c;
 }
 
-.search.active .input{
-    width: 240px;
+.four {
+    background-color: violet;
+    grid-area: d;
 }
 
-.search.active .btn {
-    transform: translateX(235px);
+.five {
+    background-color: yellowgreen;
+    grid-area: e;
+}
+
+@media (max-width: 530px){
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7,1fr);
+        grid-template-areas: 
+          "a"
+          "a"
+          "a"
+          "b"
+          "c"
+          "d"
+          "e";
+    }
 }
