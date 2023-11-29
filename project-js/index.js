@@ -133,4 +133,103 @@ shoppingCart.removeItem("Headphones");
 
 // Calculate and display the updated total cost
 const updatedTotalCost = shoppingCart.calculateTotal();
-console.log(`Updated total cost of items in the cart: $${updatedTotalCost}`);
+console.log(`Updated total cost of items in the cart: ${updatedTotalCost}`);
+
+//Develop a simple URL shortener service using JavaScript. Implement a function that takes a long URL as an input parameter and the output will be a shortened URL. Create a reverse function as well. The reverse function takes the shortened URL and returns the original long URL. You can use simple in-memory objects to store the mapping between long and short URLs.
+
+// URL shortener service
+class UrlShortener {
+  constructor() {
+    // class implemenation or function implementation can be used
+    this.urlMap = {}; // Object to store the mapping between long and short URLs
+    this.shortUrlBase = "https://short.url/";
+    this.nextId = 1; // Counter for generating short URL IDs
+  }
+
+  // Function to shorten a long URL
+  shortenUrl(longUrl) {
+    const shortUrl = this.shortUrlBase + this.nextId;
+    this.urlMap[shortUrl] = longUrl;
+    this.nextId++;
+    return shortUrl;
+  }
+
+  // Function to expand a short URL to the original long URL
+  expandUrl(shortUrl) {
+    const longUrl = this.urlMap[shortUrl];
+    if (longUrl) {
+      return longUrl;
+    } else {
+      throw new Error("Short URL not found");
+    }
+  }
+}
+
+// Example usage:
+const urlShortener = new UrlShortener();
+
+// Shorten a long URL
+const longUrl = "https://www.example.com/some/long/path";
+const shortUrl = urlShortener.shortenUrl(longUrl);
+console.log(`Shortened URL: ${shortUrl}`);
+
+// Expand a short URL
+const originalUrl = urlShortener.expandUrl(shortUrl);
+console.log(`Original URL: ${originalUrl}`);
+
+//Implement an autocomplete feature for a search input field. Given an array of words, write a function that suggests words based on the current input. The output of the function will be an array of suggested words that start with the input characters, limiting the number of suggestions (e.g., a maximum of 7 suggestions).
+
+function autocomplete(input, wordArray, maxSuggestions = 7) {
+  let suggested = [];
+
+  let cleanedInput = input.toLowerCase();
+
+  for (const word of wordArray) {
+    let cleanedWord = word.toLowerCase();
+    if (cleanedWord.startsWith(cleanedInput)) {
+      suggested.push(word);
+      if (suggested.length >= maxSuggestions) {
+        break;
+      }
+    }
+  }
+  return suggested;
+}
+
+// Example usage:
+const words = [
+  "apple",
+  "banana",
+  "apricot",
+  "cherry",
+  "grape",
+  "orange",
+  "pear",
+  "pineapple",
+  "plum",
+];
+
+const input = "p";
+const suggestedWords = autocomplete(input, words);
+console.log(`Suggestions for "${input}":`, suggestedWords);
+
+//
+class Bird {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Crow extends Bird {
+  speak() {
+    super.speak();
+    console.log(`${this.name} sings.`);
+  }
+}
+
+const crow = new Crow("Tim");
+crow.speak();
