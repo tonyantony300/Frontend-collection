@@ -213,23 +213,84 @@ const input = "p";
 const suggestedWords = autocomplete(input, words);
 console.log(`Suggestions for "${input}":`, suggestedWords);
 
-//
-class Bird {
-  constructor(name) {
-    this.name = name;
-  }
+//palindrom check function
 
-  speak() {
-    console.log(`${this.name} makes a noise.`);
+function isPalindrome(str) {
+  return str === str.split("").reverse().join("");
+}
+
+//return even numbers in an array
+
+function filterEvenNumbers(numbers) {
+  return numbers.filter((num) => num % 2 === 0);
+}
+
+function factorial(number) {
+  if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    return number * factorial(number - 1);
   }
 }
 
-class Crow extends Bird {
-  speak() {
-    super.speak();
-    console.log(`${this.name} sings.`);
-  }
+//1. Write a function which loops through an array and checks if n of the elements
+// of the array satisfy the condition function that is passed
+// Signature of the 'some' function
+
+// (array, n, conditionFunction) -> trueOrFalse
+// array - Input array
+// n - The function should check if n elements of the conditionFunction satisfy
+// Signature of the 'isEven' and 'isPrime' functions. They should take one integer as input and return a true or false value.
+
+// (int) -> trueOrFalse
+
+// Write the some function and isEven and isPrime functions
+
+// Example: (When you run the following code, don't change anything)
+// console.log(some([2,4,6], 3, isEven)) // should print true
+// console.log(some([2,3,4], 3, isEven)) // should print false
+// console.log(some([2,3,11], 4, isPrime)) // should print false
+// console.log(some([2,3,5,9], 3, isPrime)) // should print true
+
+function some(array, n, conditionFunction) {
+  let mapped = array.map((i) => conditionFunction(i));
+  return mapped.filter((i) => i === true).length >= n;
 }
 
-const crow = new Crow("Tim");
-crow.speak();
+function isEven(int) {
+  return int % 2 === 0;
+}
+
+function isPrime(int) {
+  for (let i = 2, s = Math.sqrt(int); i <= s; i++) {
+    if (int % i === 0) return false;
+  }
+  return int > 1;
+}
+
+// 2. Write a function whch returns a function that generates fibonacci numbers.
+// Don't use generators.
+
+// Example: (When you run the following code, don't change anything)
+
+// let fibonacciGenerator = createFibonacciGenerator()
+// console.log(fibonacciGenerator()) // should print 0
+// console.log(fibonacciGenerator()) // should print 1
+// console.log(fibonacciGenerator()) // should print 1
+// console.log(fibonacciGenerator()) // should print 2
+// console.log(fibonacciGenerator()) // should print 3
+// console.log(fibonacciGenerator()) // should print 5
+// console.log(fibonacciGenerator()) // should print 8
+
+let a = 0;
+let b = 1;
+
+function createFibonacciGenerator() {
+  return function () {
+    const result = a;
+    const temp = a + b;
+    a = b;
+    b = temp;
+    return result;
+  };
+}
