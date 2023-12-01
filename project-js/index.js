@@ -294,3 +294,29 @@ function createFibonacciGenerator() {
     return result;
   };
 }
+
+const users = [
+  {
+    name: "Jack",
+    isActive: true,
+    age: 20,
+  },
+  {
+    name: "Jhon",
+    isActive: true,
+    age: 25,
+  },
+  {
+    name: "Joseph",
+    isActive: false,
+    age: 30,
+  },
+];
+
+//Sort by age, active finally names only array
+
+let names = users
+  .sort((user1, user2) => (user1.age < user2.age ? 1 : -1))
+  .filter((user) => user.isActive)
+  .map((user) => user.name);
+console.log(names);
