@@ -16,7 +16,7 @@ function outerfunction() {
 
 let closure = outerfunction();
 
-// closure();
+closure();
 
 // EXAMPLE TWO - predict output
 
@@ -295,6 +295,8 @@ function createFibonacciGenerator() {
   };
 }
 
+/////
+
 const users = [
   {
     name: "Jack",
@@ -320,3 +322,67 @@ let names = users
   .filter((user) => user.isActive)
   .map((user) => user.name);
 console.log(names);
+
+//typeOf null is Object typeOf undefined is undefined
+
+//Hoisting - this is how js works, where varivales and function declarations are moved to the top of the scope.
+
+// console.log(foo);
+// let foo = 2;
+// //we will get foo is not defined
+
+// let foo;
+// console.log(foo);
+// foo = 2;
+
+//foo is undefined
+
+// Weird console behavior =>
+
+// let foo
+// foo = 2
+// You're declaring a variable foo using the let keyword and then assigning the value 2 to it. The console responds with 2 because it evaluates and displays the result of the last expression entered. In this case, the last expression is foo = 2, and the value of that expression is 2. Therefore, the console shows 2 as the result.
+
+// *** In JavaScript, let and const declarations are not hoisted to the top of the scope, and they are not initialized until the point in the code where they are declared. ***
+
+// *** Var and function declarations works in similar way.
+
+// function private() {
+//   const secret = "yolyo"; // this variable is closure
+//   return () => secret;
+// }
+
+// let callPrivate = private();
+// console.log(callPrivate());
+
+// const PrivateCounter = () => {
+//   let count = 0;
+//   return {
+//     getCount: () => {
+//       return count;
+//     },
+//     increaseCount: (val = 1) => {
+//       count += val;
+//     },
+//   };
+// };
+
+// let counter = PrivateCounter();
+// console.log(counter);
+// console.log(counter.getCount());
+// counter.increaseCount();
+// console.log(counter.getCount());
+
+//Question - Multiply(a)(b) and return product of a and b; two calls to same function with one each args - currying
+
+function multiply(num1) {
+  return (num2) => {
+    return num1 * num2;
+  };
+}
+multiply(2)(3);
+
+//same can be written as
+
+let multiply = (num1) => (num2) => num1 * num2;
+multiply(2)(3);
