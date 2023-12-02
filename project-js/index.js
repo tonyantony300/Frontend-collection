@@ -386,3 +386,29 @@ multiply(2)(3);
 
 let multiply = (num1) => (num2) => num1 * num2;
 multiply(2)(3);
+
+// complicated example where (a)(b)(c) and (a,b,c) and (a)(b,c) works
+
+let curry = function (fn) {
+  let arity = fn.length;
+  return function f1(...args) {
+    console.log(args);
+    if (args.length >= arity) {
+      console.log("enough args");
+      return fn(...args);
+    } else {
+      console.log("Enter additional args");
+      return function f2(...moreArgs) {
+        let newArgs = args.concat(moreArgs);
+        return f1(...newArgs);
+      };
+    }
+  };
+};
+
+const curriedSum = curry((a, b, c) => a + b + c);
+console.log(curriedSum(1, 2)(3));
+console.log(curriedSum(1)(2, 3));
+console.log(curriedSum(1, 2, 3));
+
+///

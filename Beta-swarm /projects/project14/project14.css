@@ -12,91 +12,46 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: 'Muli', sans-serif;
-    background-color: steelblue;
+    background-color: black;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
-   overflow: hidden;
+     overflow: hidden;
 }
 
-.container {
-    background-color: rgba(0,0,0,0.4);
-    padding: 20px 40px;
-    border-radius: 5px;
-}
-
-.container h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.container a {
-    text-decoration: none;
-    color: lightblue;
-}
-
-.btn { 
-   background-color: lightblue;
-   width: 100%;
-   border: 0;
-   padding: 15px;
-   border-radius: 5px;
-   font-family: inherit;
-   cursor: pointer;
-   font-size: 16px;
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-.text {
-    margin-top: 30px;
-}
-
-.form-control {
-    width: 300px;
-    margin: 20px 0;
-    position: relative;
- 
-}
-
-.form-control input {
-    background-color:  transparent;
-    border: none;
-    color: #fff;
-    border-bottom: 1px solid #fff;
-    display: block;
-    width: 100%;
+.ripple {
+    background-color: purple;
+    border: 1px solid purple;
+    padding: 20px 30px;
+    margin: 20px 10px;
     font-size: 18px;
-    padding: 10px 0px ;
-
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+    position: relative;
 }
 
-.form-control input:focus, .form-control input:valid {
+.ripple:focus {
     outline: none;
 }
 
-.form-control  label {
+.circle {
     position: absolute;
-    top: 15px;
-    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
 }
 
-.form-control  label span {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.form-control input:focus , .form-control input:valid {
-    border-bottom-color: lightblue;
-}
-
-
-.form-control input:focus + label span, .form-control input:valid + label span {
-    color: lightblue;
-    font-size: 16px;
-    transform: translateY(-30px);
+@keyframes scale {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
 }

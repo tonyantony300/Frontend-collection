@@ -1,10 +1,23 @@
-let labels = document.querySelectorAll(".form-control label");
+let button = document.querySelector(".ripple");
 
-labels.forEach((label) => {
-  label.innerHTML = label.innerText
-    .split("")
-    .map((letter, index) => {
-      return `<span style="transition-delay: ${index * 50}ms">${letter}</span>`;
-    })
-    .join("");
+button.addEventListener("click", function (e) {
+  let x = e.clientX;
+  let y = e.clientY;
+
+  let buttonTop = e.target.offsetTop;
+  let buttonLeft = e.target.offsetLeft;
+
+  let xInside = x - buttonLeft;
+  let yInside = y - buttonTop;
+
+  console.log(xInside, yInside);
+  let circle = document.createElement("span");
+  circle.classList.add("circle");
+  circle.style.top = yInside + "px";
+  circle.style.left = xInside + "px";
+  this.appendChild(circle);
+
+  setTimeout(() => {
+    circle.remove();
+  }, 500);
 });
