@@ -412,3 +412,54 @@ console.log(curriedSum(1)(2, 3));
 console.log(curriedSum(1, 2, 3));
 
 ///
+
+// Write a function to add an element to an array
+
+function addElem(array, el) {
+  //Using push will mutathe array, this way, its more elegant
+  return [...array, el];
+}
+
+//Write function to concatinate two arrays
+
+function concat(arr1, arr2) {
+  //using spread operator is the best approach
+  return [...arr1, ...arr2];
+}
+
+// Write a function to check if name is inside array of objects
+
+function checkName(name, arr) {
+  return arr.some((obj) => obj.name === name);
+}
+
+// Write finction to return unique elemts only
+
+let unique = (arr) => {
+  return [...new Set(arr)];
+};
+// unique([1, 1, 2]); primitives can be compared like this.
+// or we can use reduce and write code in more functional way
+
+function uniqueFinder(target) {
+  return target.reduce((cumul, el) => {
+    return cumul.includes(el) ? cumul : [...cumul, el];
+  }, []);
+}
+
+// console.log(uniqueFinder([1, 2, 3, 2]));
+const books = [
+  { name: "Harry Potter", author: "Joanne Rowling" },
+  { name: "Warcross", author: "Marie Lu" },
+  { name: "The Hunger Games", author: "Suzanne Collins" },
+];
+
+/// SORT array of objects with authers Lastname
+
+let sorted = books.sort((book1, book2) => {
+  let author1 = book1.author.split(" ")[1];
+  let author2 = book2.author.split(" ")[1];
+  return author1 > author2 ? -1 : 1;
+});
+
+// console.log(sorted)

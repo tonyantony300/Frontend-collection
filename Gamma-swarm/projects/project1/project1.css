@@ -1,0 +1,54 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Public+Sans:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: steelblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 50px;
+ }
+
+
+ .fill {
+    background-image: url("https://source.unsplash.com/random/150x150");
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+ }
+
+ .hold {
+    border: 3px solid gray;
+ }
+
+ .empty.hovered {
+    background-color: #333;
+    border: 3px dashed gray;
+ }
+
+
+.empty {
+
+  border: 3px solid black;
+  height: 150px;
+  width: 150px;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 10px;
+  background-color: white;
+}
+
+@media (max-width: 800px) {
+    body {
+       flex-direction: column;
+    }    
+ }
