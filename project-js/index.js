@@ -463,3 +463,17 @@ let sorted = books.sort((book1, book2) => {
 });
 
 // console.log(sorted)
+
+// Working with DOM
+
+// Q your dome has a paragraph, change background color to yellow if word is longer than 8.
+
+let element = document.querySelector("p");
+element.innerHTML = element.innerHTML
+  .split("")
+  .map((word) => {
+    return word.length > 8
+      ? `<span style="background-color: yellow">${word}</span>`
+      : word;
+  })
+  .join("");
