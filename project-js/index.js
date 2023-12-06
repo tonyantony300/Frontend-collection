@@ -477,3 +477,34 @@ element.innerHTML = element.innerHTML
       : word;
   })
   .join("");
+
+/// Write a range function
+
+const range = (start, end) => {
+  return [
+    ...Array(end)
+      .keys()
+      .map((el) => el + start),
+  ];
+};
+
+range(1, 50);
+
+// Simple but effective shuffle function
+
+const shuffle = (item) => {
+  return item
+    .map((el) => ({ sort: Math.random(), value: el }))
+    .sort((item1, item2) => item1.sort - item2.sort)
+    .map((i) => i.value);
+};
+
+shuffle([1, 2, 3, 4]);
+
+/// Find the number of occurences of a minimum value in the list
+let arr = [1, 2, 3, 4, 5, 1, 1];
+let minVal = Math.min(...arr);
+let occurences = arr.filter((el) => el === minVal);
+console.log(occurences.length);
+
+///
