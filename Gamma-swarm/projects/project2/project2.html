@@ -5,27 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="project2.css">
-    <title>Expanding cards</title>
+    <title>Drawing App</title>
 </head>
 <body>
-    <h3>Click on a panel to expand!</h3>
-    <div class="container">
-     
-        <div class="card active" style=" background-image: url('https://source.unsplash.com/0uwVSwYBBFk')">
-            <h3>Terminal Ghosts</h3>
-        </div>
-        <div class="card" style="background-image: url('https://source.unsplash.com/tIic_GB1_OU')">
-            <h3>Unreal trek</h3>
-        </div>
-        <div class="card" style="background-image: url('https://source.unsplash.com/yQKp5Xt2h0M')">
-            <h3>Rainy Ghosts</h3>
-        </div>
-        <div class="card" style="background-image: url('https://source.unsplash.com/0ZsvYGfishE')">
-            <h3>Pumpkin Patch</h3>
-        </div>
-        <div class="card" style="background-image: url('https://source.unsplash.com/Sg3XwuEpybU')">
-            <h3>Retro dog</h3>
-        </div>
+    <canvas id="canvas" height="600px" width="600px"></canvas>
+    <div class="toolbox">
+        <button id="decrease">-</button>
+        <span id="size">20</span>
+        <button id="increase">+</button>
+        <input type="color" id="color">
+        <button id="clear">X</button>
     </div>
     <script src="project2.js"></script>
 </body>
