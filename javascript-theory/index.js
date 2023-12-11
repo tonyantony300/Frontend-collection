@@ -578,3 +578,143 @@ function App() {
 export default App;
 
 /// react component ends here
+
+// Learning this.
+function callMe() {
+  console.log(this);
+}
+callMe();
+
+// we will get global object in browser it is window
+
+class Item {
+  title = "Ball";
+  getItem() {
+    console.log(this);
+  }
+}
+let item = new Item();
+item.getItem();
+
+// Here this will result in item object without the method
+
+class Item {
+  title = "Ball";
+  getItem() {
+    function someFn() {
+      console.log(this);
+    }
+    someFn();
+  }
+}
+//let item = new Item();
+item.getItem();
+
+// this will be undefined in the above method
+//To fix the above we can set proper reference like this
+
+class Item {
+  title = "Ball";
+  getItem() {
+    const this_ = this;
+    function someFn() {
+      console.log(this_);
+    }
+    someFn();
+  }
+}
+//let item = new Item();
+item.getItem();
+
+//Above is an old method, used int he build step of Javascript
+//We can use arrow function to get proper reference.
+
+class Item {
+  title = "Ball";
+  getItem() {
+    (() => {
+      console.log(this);
+    })();
+  }
+}
+//let item = new Item();
+item.getItem();
+
+// // Design a class for employee which takes id and name in during construction of object and has a
+//salary property
+
+class employee {
+  constructor(id, name) {
+    if (!id || !name) {
+      throw new Error("Need id and a name");
+    }
+    this.id = id;
+    this.name = name;
+  }
+
+  setSalary(salary) {
+    this.salary = salary;
+  }
+
+  getSalary() {
+    return this.salary;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getId() {
+    return this.id;
+  }
+}
+
+let empolyee1 = new employee(1, "shyam");
+empolyee1.setSalary(25000);
+console.log(empolyee1.getSalary());
+console.log(empolyee1.getId());
+console.log(empolyee1.getName());
+
+// Design a class for manager which is employee and can have department property
+
+class manager extends employee {
+  setDepartment(name) {
+    this.department = name;
+  }
+  getDepartment() {
+    return this.department;
+  }
+}
+
+let empolyee2 = new manager(2, "unni");
+console.log(empolyee2);
+
+/// Design the same classes this time, with using prototypes
+
+var employee = function (id, name) {
+  if (!id || !name) {
+    throw new Error("Need id and a name");
+  }
+  this.id = id;
+  this.name = name;
+};
+
+employee.prototype.setSalary = function (salary) {
+  this.salary = salary;
+};
+
+employee.prototype.getSalary = function (salary) {
+  return this.salary;
+};
+
+employee.prototype.getName = function () {
+  return this.name;
+};
+
+employee.prototype.getId = function () {
+  return this.id;
+};
+
+//let empolyee2 = new employee(2, "unni");
+console.log(empolyee2.setSalary(55000));
+console.log(empolyee2.getSalary());
