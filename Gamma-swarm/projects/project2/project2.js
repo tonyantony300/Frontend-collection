@@ -3,6 +3,7 @@ const increase = document.getElementById("increase");
 const decrease = document.getElementById("decrease");
 const sizeEl = document.getElementById("size");
 const colorEl = document.getElementById("color");
+const clearEl = document.getElementById("clear");
 const ctx = canvas.getContext("2d");
 
 let size = 20;
@@ -24,8 +25,12 @@ decrease.addEventListener("click", () => {
   }
 });
 
-colorEl.addEventListener("click", (e) => {
-  console.log(e);
+colorEl.addEventListener("change", (e) => {
+  color = e.target.value;
+});
+
+clearEl.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 canvas.addEventListener("mousedown", (e) => {
