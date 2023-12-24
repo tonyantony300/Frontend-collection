@@ -738,3 +738,12 @@ xhr.onload = function () {
 xhr.onerror = function () {
   console.log("Xhr request failed");
 };
+
+//Use the similar with fetch
+
+fetch("https://api.github.com/users/gaearon/repos")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+//
