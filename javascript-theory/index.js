@@ -718,3 +718,32 @@ employee.prototype.getId = function () {
 //let empolyee2 = new employee(2, "unni");
 console.log(empolyee2.setSalary(55000));
 console.log(empolyee2.getSalary());
+
+//Async Javascript
+// Write an example for fetching data using XMLHttpRequest
+
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.github.com/users/gaearon/repos");
+
+xhr.send();
+
+xhr.onload = function () {
+  if (xhr.status !== 200) {
+    console.log("Error" + xhr.status + xhr.statusText);
+  } else {
+    console.log(xhr.response);
+  }
+};
+
+xhr.onerror = function () {
+  console.log("Xhr request failed");
+};
+
+//Use the similar with fetch
+
+fetch("https://api.github.com/users/gaearon/repos")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
+
+//
