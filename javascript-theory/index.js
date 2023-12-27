@@ -746,4 +746,57 @@ fetch("https://api.github.com/users/gaearon/repos")
   .then((data) => console.log(data))
   .catch((e) => console.log(e));
 
-//
+// CALLBACKS are an important concepts when comes to making js asynchronous
+// Write a asynchronous function which executes a callback functions afrter finishing an
+// asynchronus task, FOLLOWING IS A BASIC CALLBACK
+
+const asyncFn = (callback) => {
+  setTimeout(() => {
+    callback("Hello");
+  }, 2000);
+};
+
+asyncFn((message) => {
+  console.log("Woopsy", message);
+});
+//What problem does callbacks solve?
+
+// Callback allow us to wait for an asynchronous task get the result
+// Callback is a generic function
+
+const asyncFn1 = (callback) => {
+  setTimeout(() => {
+    callback(1);
+  }, 3000);
+};
+
+const asyncFn2 = (callback) => {
+  setTimeout(() => {
+    callback(2);
+  }, 2000);
+};
+
+const asyncFn3 = (callback) => {
+  setTimeout(() => {
+    callback(3);
+  }, 1000);
+};
+
+asyncParallel([asyncFn1, asyncFn2, asyncFn3], (result) => {
+  console.log(result); //need to print result of each async function in that order 1,2,3
+});
+
+const asyncParallel = (asyncFns, callback) => {
+  const resultArr = new Array(asyncFns.length);
+  let resultCounter = 0;
+
+  asyncFns.forEach((asyncFn, index) => {
+    asyncFn((value) => {
+      resultArr[index] = value;
+      resultCounter++;
+      if (resultCounter >= asyncFns.length) {
+        callback(resultArr);
+      }
+    });
+  });
+};
