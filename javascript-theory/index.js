@@ -782,10 +782,6 @@ const asyncFn3 = (callback) => {
   }, 1000);
 };
 
-asyncParallel([asyncFn1, asyncFn2, asyncFn3], (result) => {
-  console.log(result); //need to print result of each async function in that order 1,2,3
-});
-
 const asyncParallel = (asyncFns, callback) => {
   const resultArr = new Array(asyncFns.length);
   let resultCounter = 0;
@@ -800,3 +796,7 @@ const asyncParallel = (asyncFns, callback) => {
     });
   });
 };
+
+asyncParallel([asyncFn1, asyncFn2, asyncFn3], (result) => {
+  console.log(result); //need to print result of each async function in that order 1,2,3
+});
