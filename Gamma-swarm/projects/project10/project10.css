@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 
 * {
@@ -7,33 +6,77 @@
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Muli', sans-serif;
     width: 100vw;
     height: 100vh;
-    background-color: #B2C8BA;
+    background-color: #3b3b98;
+    color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     overflow: hidden;
     margin: 0;
-
 }
 
-.bg {
-    width: calc(100vw + 100px);
-    height: calc(100vh + 100px);
-    background-image: url('../../assets/mommy.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    position: absolute;
-    filter: blur(0px);
-    top: -50px;
-    left: -50px;
+h2 {
+    margin: 10px 0 20px;
+    text-align: center;
 }
 
-.loading-text {
+.container {
+    background-color: #23235b;
+    box-shadow: 0px 2px 10px rgba(255,255,255, 0.2);
+    padding: 20px;
+    width: 350px;
+    max-width: 100%;
+}
+
+.result-container {
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 12px 10px ;
+    height: 50px;
+    width: 100%;
+}
+
+.result-container #result {
+    word-wrap: break-word;
+    max-width: calc(100% - 40px);
+}
+
+.btn {
+    border: none;
+    background-color: #3b3b98;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-large {
+    display: block;
+    width: 100%;
+}
+
+.result-container .btn {
     position: absolute;
-    font-size: 96px;
-    color: #fafafa;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
 }
