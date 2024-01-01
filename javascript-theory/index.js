@@ -860,3 +860,12 @@ Promise.all([getUsers(), getUserStatuses()]).then(([users, userStatuses]) => {
   const mappedUsers = mapUsers(users, userStatuses);
   console.log(mappedUsers);
 });
+
+// Design a utility which takes URL and a value for attempts which will attempt to make a fetch request
+// If failed, it will try with an increasing delay for number of times which user has requested
+
+const requestManager = (url, options = {}, attempts = 3) => {
+  return;
+};
+
+requestManager("https://foo.com").then(resolve).catch(error);

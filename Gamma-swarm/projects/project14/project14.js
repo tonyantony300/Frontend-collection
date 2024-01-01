@@ -1,10 +1,23 @@
-let labels = document.querySelectorAll(".form-control label");
+const requestManager = (url, options = {}, attempts = 3) => {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then(resolve)
+      .catch((error) => {
+        const remainingAttempts = attempts - 1;
+        if (remainingAttempts === 0) {
+          return reject(error);
+        }
+        setTimeout(() => {
+          requestManager(url, options, remainingAttempts)
+            .then(resolve)
+            .catch(reject);
+        }, 3000);
+      });
+  });
+};
 
-labels.forEach((label) => {
-  label.innerHTML = label.innerText
-    .split("")
-    .map((letter, index) => {
-      return `<span style="transition-delay: ${index * 50}ms">${letter}</span>`;
-    })
-    .join("");
-});
+requestManager("https://foo.com")
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => console.log(error));
