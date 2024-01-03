@@ -5,7 +5,6 @@ codes.forEach((code, index) => {
   code.addEventListener("keydown", (e) => {
     if (e.key >= 0 && e.key <= 9) {
       codes[index].value = "";
-      console.log(codes[index]);
       setTimeout(() => {
         codes[index + 1]?.focus();
       }, 10);
