@@ -1,17 +1,17 @@
-let boxes = document.querySelectorAll(".box");
-let triggerBottom = (window.innerHeight / 5) * 3;
+const codes = document.querySelectorAll(".code");
+codes[0].focus();
 
-update();
-
-function update() {
-  boxes.forEach((item) => {
-    let boxTop = item.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      item.classList.add("show");
-    } else {
-      item.classList.remove("show");
+codes.forEach((code, index) => {
+  code.addEventListener("keydown", (e) => {
+    if (e.key >= 0 && e.key <= 9) {
+      codes[index].value = "";
+      setTimeout(() => {
+        codes[index + 1]?.focus();
+      }, 10);
+    } else if (e.key === "Backspace") {
+      setTimeout(() => {
+        codes[index - 1]?.focus();
+      }, 10);
     }
   });
-}
-
-window.addEventListener("scroll", update);
+});
