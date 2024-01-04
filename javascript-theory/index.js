@@ -891,7 +891,6 @@ requestManager("https://foo.com")
 
 function typeOf(input) {
   const rawObject = Object.prototype.toString.call(input).toLowerCase();
-  console.log(rawObject);
   const typeRegex = /\[object (.*)]/g;
   const type = typeRegex.exec(rawObject)[1];
   return type;
@@ -926,3 +925,66 @@ const shallowComparison = (source, target) => {
 };
 
 console.log(shallowComparison([1], [1]));
+
+// Now implement deep comparison
+
+function typeOf(input) {
+  const rawObject = Object.prototype.toString.call(input).toLowerCase();
+  const typeRegex = /\[object (.*)]/g;
+  const type = typeRegex.exec(rawObject)[1];
+  return type;
+}
+
+const deepComparison = (source, target) => {
+  if (typeOf(source) !== typeOf(target)) {
+    return false;
+  }
+
+  if (typeOf(source) === "array") {
+    if (source.length !== target.length) {
+      return false;
+    }
+    return source.every((el, index) => deepComparison(el, target[index]));
+  }
+
+  if (typeOf(source) === "object") {
+    if (Object.keys(source).length !== Object.keys(target).length) {
+      return false;
+    }
+
+    return Object.keys(source).every((el) =>
+      deepComparison(source[el], target[el])
+    );
+  }
+
+  if (typeOf(source) === "date") {
+    return source.getTime() === target.getTime();
+  }
+
+  // The below is for primitives
+  return source === target;
+};
+
+console.log(deepComparison([1], [1]));
+
+// Design a memoization function which adds 10 to the provided value and take it from cache it was already
+// calculated
+
+const memoize = () => {
+  const cache = {};
+  return (value) => {
+    if (value in cache) {
+      console.log("Stored in cache");
+      return cache[value];
+    } else {
+      console.log("Does not have a stored value doing the calculation");
+      const calculated = value + 10;
+      cache[value] = calculated;
+      return calculated;
+    }
+  };
+};
+
+const newAdd = memoize();
+console.log(newAdd(9));
+console.log(newAdd(9));
