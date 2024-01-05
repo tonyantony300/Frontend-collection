@@ -988,3 +988,70 @@ const memoize = () => {
 const newAdd = memoize();
 console.log(newAdd(9));
 console.log(newAdd(9));
+
+// Design a function which returns a Fibnacci sequence value
+// 0,1,1,2,3,5,8,13,21,34,55,89
+
+const fibnacci = (n) => {
+  if (n === 1) {
+    return 1;
+  } else if (n == 0) {
+    return 0;
+  } else {
+    return fibnacci(n - 2) + fibnacci(n - 1);
+  }
+};
+
+console.log(fibnacci(9));
+
+// Print the whole fibnacci sequence till the index specified
+
+function generateFibonacci(index) {
+  let fibonacciArray = [0, 1];
+
+  for (let i = 2; i <= index; i++) {
+    fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2];
+  }
+
+  return fibonacciArray.slice(0, index + 1);
+}
+
+// Replace 10 with your desired index
+let result = generateFibonacci(10);
+console.log(result);
+
+// Write a function to Check a string is palindrome
+
+const isPalindrome = (word) => {
+  return word === word.split("").reverse().join("");
+};
+console.log(isPalindrome("saippuakivikauppias"));
+
+// Here are some examples of words that are anagrams.
+// "listen" and "silent"
+// "rail safety" and "fairy tales"
+// "dormitory" and "dirty room"
+// "the eyes" and "they see"
+
+//Write anagarms
+//Same word does not cound as anagram
+
+const isAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  const str1Lower = str1.toLowerCase();
+  const str2Lower = str2.toLowerCase();
+
+  if (str1Lower === str2Lower) {
+    return false;
+  }
+
+  return (
+    str1Lower.split("").sort().join("") === str2Lower.split("").sort().join("")
+  );
+};
+
+console.log(isAnagram("listen", "silent"));
+console.log(isAnagram("dart", "fart"));
