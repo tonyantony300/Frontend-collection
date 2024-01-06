@@ -1055,3 +1055,47 @@ const isAnagram = (str1, str2) => {
 
 console.log(isAnagram("listen", "silent"));
 console.log(isAnagram("dart", "fart"));
+
+/// Write a function to convert given string of words to title case
+// Provided test cases
+// titleCase("I'm a little tea pot") should return a string.
+// titleCase("I'm a little tea pot") should return "I'm A Little Tea Pot".
+// titleCase("sHoRt AnD sToUt") should return "Short And Stout"
+// titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return "Here Is My Handle Here Is My 4 Spout"
+
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+console.log(titleCase("I'm a little tea pot"));
+console.log(titleCase("sHoRt AnD sToUt"));
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+
+// Write a function which can convert the time given in 12 hr input to 24 hr format.
+// convertTo24HrsFormat("12:10AM"); 00:10
+// convertTo24HrsFormat("5:00AM"); 05:00
+// convertTo24HrsFormat("12:33PM"); 12:33
+// convertTo24HrsFormat("01:59PM"); 13:59
+// convertTo24HrsFormat("11:8PM"); 23:08
+// convertTo24HrsFormat("10:02PM");  22:02
+
+const convertTo24HrsFormat = (timeString) => {
+  let [hours, mins] = timeString.toLowerCase().split(":");
+  if (mins.endsWith("am")) {
+    hours = hours === "12" ? "0" : hours;
+  } else {
+    hours = hours === "12" ? hours : String(+hours + 12);
+  }
+  return hours.padStart(2, "0") + ":" + mins.slice(0, -2).padStart(2, "0");
+};
+
+console.log(convertTo24HrsFormat("12:10AM"));
+console.log(convertTo24HrsFormat("5:00AM"));
+console.log(convertTo24HrsFormat("12:33PM"));
+console.log(convertTo24HrsFormat("01:59PM"));
+console.log(convertTo24HrsFormat("11:8PM"));
+console.log(convertTo24HrsFormat("10:02PM"));
