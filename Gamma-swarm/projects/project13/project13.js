@@ -22,9 +22,16 @@ function runAnimation() {
   });
 }
 
-replay.addEventListener("click", () => {
+function resetDOM() {
   counter.classList.remove("hide");
   finalMessage.classList.remove("show");
-  nums[0].classList.add("goIn");
+  nums.forEach((number) => {
+    number.classList.value = "";
+  });
+  nums[0].classList.add("in");
+}
+
+replay.addEventListener("click", () => {
+  resetDOM();
   runAnimation();
 });
