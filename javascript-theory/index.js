@@ -1140,3 +1140,57 @@ const result = loc
   .reduce((arr, acc) => arr.concat(acc), []);
 
 console.log(result);
+
+// Write a function to Replace parameters in url
+function replaceParamsInUrl(url, data) {
+  return data.reduce((acc, replacement) => {
+    return acc.replace(":" + replacement.from, replacement.to);
+  }, url);
+}
+
+const initialUrl = "/posts/:postId/comments/:commentId";
+const resultUrl = replaceParamsInUrl(initialUrl, [
+  { from: "postId", to: "1" },
+  { from: "commentId", to: "3" },
+]);
+
+console.log(resultUrl);
+
+//
+// Format backend validation message to frontend format
+const backendErrors = {
+  email: {
+    errors: [
+      {
+        message: "Can't be blank",
+      },
+    ],
+  },
+  password: {
+    errors: [
+      { message: "Must contain symbols in different case" },
+      {
+        message: "Must be at least 8 symbols length",
+      },
+    ],
+  },
+  passwordConfirmation: {
+    errors: [
+      {
+        message: "Must match with password",
+      },
+    ],
+  },
+};
+
+// ["Email: Can't be blank", "Password: Must contain symbols in different case, Must be at least 8 symbols length", "PasswordConfirmation: Must match with password"]
+
+const humanReadableData = Object.entries(backendErrors).map(
+  ([field, value]) => {
+    const formattedField = field.charAt(0).toUpperCase() + field.slice(1);
+    const errorMessages = value.errors.map((msg) => msg.message).join(", ");
+    return `${formattedField} : ${errorMessages}`;
+  }
+);
+
+console.log(humanReadableData);
